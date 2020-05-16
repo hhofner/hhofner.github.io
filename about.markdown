@@ -4,4 +4,5 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Like any other millenial white male, my interests revolve primarily around sports and tech, but I also play classical guitar 
+and enjoy a game or two on Lichess.com. I own an HHKB, but I don't use Arch (yet).
