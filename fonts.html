@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="author" content="Hans Hofner" />
+		<meta name="description" content="My Software Development Values" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta property="og:title" content="My favorite fonts.">
+		<meta property="og:description" content="Fonts that keep me from going insane, and keep me staying happy.">
+		<meta property="og:url" content="http://unresolvedconflict.com/fonts.html">
+		
+		<title>Unresolved Conflict</title>
+		<link rel="icon" href="favicon.svg" type="image/svg+xml">
+		<link rel="stylesheet" href="https://unpkg.com/missing.css@1.0.9/dist/missing.min.css">
+		<link rel="stylesheet" href="index.css">
+		<style>
+			@font-face {
+			  font-family: 'JetBrains Mono';
+			  src: url('JetBrainsMono-Bold.ttf') format('truetype');
+			}
+			.jetbrains-mono-font {
+				font-family: 'JetBrains Mono', monospace;
+			}
+			@font-face {
+				font-family: 'Meslo';
+				src: url('MesloLGLDZNerdFont-Regular.ttf') format('truetype');
+			}
+			.meslo-mono-font {
+				font-family: 'Meslo', monospace;
+			}
+			@font-face {
+				font-family: 'Cascadia';
+				src: url('CaskaydiaCoveNerdFont-Regular.ttf') format('truetype');
+			}
+			.cascadia-pro-font {
+				font-family: 'Cascadia';
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>
+			Unresolved Conflict
+			<!-- ph:git-pull-request-duotone -->
+			<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256"><g fill="currentColor"><path d="M96 64a24 24 0 1 1-24-24a24 24 0 0 1 24 24Zm104 104a24 24 0 1 0 24 24a24 24 0 0 0-24-24Z" opacity=".2"/><path d="M104 64a32 32 0 1 0-40 31v66a32 32 0 1 0 16 0V95a32.06 32.06 0 0 0 24-31Zm-48 0a16 16 0 1 1 16 16a16 16 0 0 1-16-16Zm32 128a16 16 0 1 1-16-16a16 16 0 0 1 16 16Zm120-31v-37.12a55.67 55.67 0 0 0-16.4-39.6L163.31 56H192a8 8 0 0 0 0-16h-48a8 8 0 0 0-8 8v48a8 8 0 0 0 16 0V67.31l28.28 28.29A39.71 39.71 0 0 1 192 123.88V161a32 32 0 1 0 16 0Zm-8 47a16 16 0 1 1 16-16a16 16 0 0 1-16 16Z"/></g></svg>
+			</h1>
+		</header>
+		<main class="container bottom-padding">
+			<a href="index.html">
+				<!-- ph:key-return-fill phosphor icon -->
+				<span><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256"><path fill="currentColor" d="M216 40H40a16 16 0 0 0-16 16v144a16 16 0 0 0 16 16h176a16 16 0 0 0 16-16V56a16 16 0 0 0-16-16Zm-32 96a8 8 0 0 1-8 8H99.31l10.35 10.34a8 8 0 0 1-11.32 11.32l-24-24a8 8 0 0 1 0-11.32l24-24a8 8 0 0 1 11.32 11.32L99.31 128H168v-24a8 8 0 0 1 16 0Z"/></svg></span>
+				<span>Return to home</span>
+			</a>
+			<h1>My favorite programming fonts</h1>
+			<p>
+				Since there are a lot of fonts out there, I suggest to those who will be spending a lot of time
+				looking at monospaced text to consider changing your font every now and then, to spice things up
+				and make your life just a little bit more fun.
+				Here are some of my favorite fonts that I usually switch between:
+			</p>
+			<h2>Menlo</h2>
+			<p>
+				Let's start with Apples out of the box monospaced font. Most people just stick with this, and it's fine
+				as it especially looks good with the San Francisco font (Apple's default font). Luckily, Nerd Fonts provides
+				their own version with ligatures called <a href="https://www.programmingfonts.org/#meslo">MesloLG Nerd Font</a>
+				for those non Apple users.
+			</p>
+			<figure>
+				<pre class="language-python">
+					<code class="mono-font meslo-mono-font">
+					# Fizz buzz in Python
+					for i in range(1, 101):
+						if i % 3 == 0 and i % 5 == 0:
+							print("FizzBuzz")
+						elif i % 3 == 0:
+							print("Fizz")
+						elif i % 5 == 0:
+							print("Buzz")
+						else:
+							print(i)
+					</code>
+				</pre>
+			</figure>
+			<h2>Jetbrains Mono (Nerd Font)</h2>
+			<p>
+				<blockquote>
+					JetBrains Mono typeface is available under the SIL Open Font License 1.1 license and can be used free of charge, for both commercial and non-commercial purposes. You do not need to give credit to JetBrains, although we will appreciate it very much if you do.
+				</blockquote>
+				This font is a classic, and often always draws me back in to using it. You can install the Nerd Font version that comes
+				with icons, or just fetch the <a href="https://www.jetbrains.com/lp/mono/">original from JetBrains</a> themselves.
+			</p>
+			<figure>
+				<pre class="language-elixir">
+					<code class="mono-font jetbrains-mono-font">
+						# Bubble sort in Elixir
+						defmodule BubbleSort do
+							def sort(list) do
+								sort(list, [])
+							end
+						end
+					</code>
+				</pre>
+			</figure>
+			<h2>Input Mono</h2>
+			<p>
+				<a href="https://input.djr.com/">Link.</a> This is my favorite font. It feels similar to the <a href="https://berkeleygraphics.com/typefaces/berkeley-mono/">Berkeley Mono</a> font. I won't add a preview to it as it
+				requires purchase for publishing options, but you can check it out for free for private use.
+			</p>
+			<h2>Cascadia Pro</h2>
+			<p>
+				And finally, I present my last font Cascadia Pro (<a href="https://www.programmingfonts.org/#cascadia-code">Nerd Fonts version</a>, of course. It's under the name "CaskaydiaCove Nerd Font".). This font is super fun, and 
+				it strikes a wonderful balance with Input Mono, meaning that I particularly like to switch between them.
+			</p>
+			<figure>
+				<pre>
+					<code class="cascadia-pro-font">
+						# Sieve in JavaScript
+						function sieve(n) {
+							let primes = new Array(n + 1).fill(true);
+							primes[0] = primes[1] = false;
+							for (let i = 2; i <= Math.sqrt(n); i++) {
+								if (primes[i]) {
+									for (let j = i * i; j <= n; j += i) {
+										primes[j] = false;
+									}
+								}
+							}
+							return primes.reduce((acc, prime, index) => {
+								if (prime) {
+									acc.push(index);
+								}
+								return acc;
+							}, []);
+						}
+					</code>
+				</pre>
+			</figure>
+		</main>
+	</body>
+</html>
