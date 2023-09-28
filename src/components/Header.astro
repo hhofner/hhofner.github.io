@@ -1,0 +1,71 @@
+---
+const { page } = Astro.props;
+---
+
+  <header class="header">
+    <svg class="logo" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 256 256">
+      <g fill="currentColor">
+        <path d="M96 64a24 24 0 1 1-24-24a24 24 0 0 1 24 24Zm104 104a24 24 0 1 0 24 24a24 24 0 0 0-24-24Z"
+          opacity=".2" />
+        <path
+          d="M104 64a32 32 0 1 0-40 31v66a32 32 0 1 0 16 0V95a32.06 32.06 0 0 0 24-31Zm-48 0a16 16 0 1 1 16 16a16 16 0 0 1-16-16Zm32 128a16 16 0 1 1-16-16a16 16 0 0 1 16 16Zm120-31v-37.12a55.67 55.67 0 0 0-16.4-39.6L163.31 56H192a8 8 0 0 0 0-16h-48a8 8 0 0 0-8 8v48a8 8 0 0 0 16 0V67.31l28.28 28.29A39.71 39.71 0 0 1 192 123.88V161a32 32 0 1 0 16 0Zm-8 47a16 16 0 1 1 16-16a16 16 0 0 1-16 16Z" />
+      </g>
+    </svg>
+
+    <div class="wrapper">
+      <h1 class="title">Unresolved Conflict</h1>
+      <nav id="nav">
+        <a href="/">Posts
+					{page === '/' && <div id="thing" class="thing"></div>}
+				</a>
+        <a href="/photos">Photos
+					{page === '/photos' && <div id="thing" class="thing"></div>}
+				</a>
+        <a href="/books">Photos
+					{page === '/books' && <div id="thing" class="thing"></div>}
+				</a>
+      </nav>
+    </div>
+  </header>
+
+<style>
+header {
+  line-height: 1.5;
+  max-height: 100vh;
+}
+
+.thing {
+	position: absolute;
+	width: 100%;
+	height: 5px;
+	background: black;
+}
+
+.logo {
+  width: 100%;
+}
+
+.title {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+	position: relative;
+}
+
+.wrapper {
+  margin-bottom: 1rem;
+}
+
+#nav {
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+}
+
+</style>
