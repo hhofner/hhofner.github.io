@@ -1,12 +1,9 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
-import MyHeader from '../components/Myheader.vue';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
-import FormattedDate from '../components/FormattedDate.astro';
-import PostTag from '../components/PostTag.vue';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -39,9 +36,10 @@ posts.forEach(post => {
 									{
 										groupedPosts[date].map((post) => (
 											<li>
-												<PostTag type={post.data.blogType} />
 												{
-													post.data.blogType === 'mini' ? <div></div> : 
+													post.data.blogType === 'mini' ? <div>
+														{post.body}
+													</div> : 
 												<a href={`/blog/${post.slug}/`}>
 													<p>{post.data.title}</p>
 												</a>

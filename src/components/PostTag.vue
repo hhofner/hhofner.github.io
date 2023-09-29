@@ -23,6 +23,6 @@ defineProps<{
   }
   .post {
     background: #09a809;
-    color: rgb(77, 234, 77);
+    color: #164a16;
   }
 </style>
