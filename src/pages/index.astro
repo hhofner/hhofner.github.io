@@ -6,6 +6,7 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
+import PostTag from '../components/PostTag.vue';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -29,42 +30,45 @@ posts.forEach(post => {
 		<main>
 			<Header page={"/"} />
 			<section>
-				<ul>
+				<div class="date-list">
 					{
 						Object.keys(groupedPosts).map((date) => (
-							<li>
-								<h5>{date}</h5>
+							<section>
+								<small class="date">{date}</small>
 								<ul>
 									{
 										groupedPosts[date].map((post) => (
 											<li>
+												<PostTag type={post.data.blogType} />
+												{
+													post.data.blogType === 'mini' ? <div></div> : 
 												<a href={`/blog/${post.slug}/`}>
 													<p>{post.data.title}</p>
 												</a>
+												}
 											</li>
 										))
 									}
 								</ul>
-							</li>
+							</section>
 						))
 					}
-				</ul>
+				</div>
 			</section>
 		</main>
 		<Footer />
 	</body>
 	<style>
 			main {
-				width: 960px;
+				width: 640px;
 			}
-			ul {
+			.date-list, ul {
 				list-style-type: none;
 				margin: 0;
 				padding: 0;
 			}
 			ul li * {
 				text-decoration: none;
-				text-align: center;
 				transition: 0.2s ease;
 			}
 			ul li:first-child .title {
@@ -92,6 +96,8 @@ posts.forEach(post => {
 			}
 			ul a:hover img {
 				box-shadow: var(--box-shadow);
+			}
+			.date {
 			}
 			@media (max-width: 720px) {
 				ul {
