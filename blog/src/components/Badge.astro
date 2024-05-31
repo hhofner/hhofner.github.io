@@ -1,0 +1,24 @@
+---
+const { isLongPost } = Astro.props
+---
+
+<style>
+.post {
+	border-radius: 15px;
+	padding: 0.4rem;
+	font-size: 0.7rem;
+	display: flex;
+}
+.long-post {
+	background: rgb(255, 214, 214);
+	color: rgb(71, 0, 0);
+	border: 1px solid red;
+}
+.short-post {
+	background: rgb(216, 255, 216);
+	color: rgb(0, 91, 0);
+	border: 1px solid rgb(0, 56, 0);
+}
+</style>
+
+<div class={isLongPost ? "post long-post" : "post short-post"}>{isLongPost ? "Long Post" : "Short Post"}</div>

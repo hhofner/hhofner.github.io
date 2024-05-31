@@ -5,6 +5,7 @@ import Tweet from '../components/Tweet.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
+import Badge from '../components/Badge.astro';
 
 const posts = await getCollection('blog')
 posts.sort((a, b) => Date.parse(b.data.pubDate.toString()) - Date.parse(a.data.pubDate.toString()))
@@ -39,8 +40,13 @@ posts.sort((a, b) => Date.parse(b.data.pubDate.toString()) - Date.parse(a.data.p
 			&:hover {
 				background-color: #f9f9f9;
 			}
+			.label-container {
+				display: flex;
+				justify-content: space-between;
+			}
 			label {
 				cursor: pointer;
+				font-weight: 600;
 			}
 			small {
 				display: block;
@@ -53,11 +59,15 @@ posts.sort((a, b) => Date.parse(b.data.pubDate.toString()) - Date.parse(a.data.p
 	<body>
 		<main>
 			<h1>Unresolved Conflict</h1>
+			<p>A micro blog of sorts. Be wary of unfiltered thoughts.</p>
 			<ul class="post-container">
 				{posts.map((post) => (
 					<li class="post-subcontainer">
 						<a class="post" href={post ? '/blog/' + post.slug : '/'}>
-							<label>{post ? post.data.title : ''}</label>
+							<div class="label-container">
+								<label>{post ? post.data.title : ''}</label>
+								<Badge isLongPost={post.data.isLongPost} />
+							</div>
 							{post.data.isLongPost ? "" : <Tweet slug={post.slug} />}
 							<small><FormattedDate date={post.data.pubDate} /></small>
 						</a>
