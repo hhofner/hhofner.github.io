@@ -17,5 +17,8 @@
     "astro": "^4.8.7",
     "open-props": "^1.7.4",
     "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "prettier": "3.3.1"
   }
 }
