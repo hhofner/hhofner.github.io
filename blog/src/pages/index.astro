@@ -3,9 +3,8 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Tweet from '../components/Tweet.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
-import Badge from '../components/Badge.astro';
+import { getCollection } from 'astro:content';
 
 const posts = await getCollection('blog')
 posts.sort((a, b) => Date.parse(b.data.pubDate.toString()) - Date.parse(a.data.pubDate.toString()))
@@ -34,6 +33,7 @@ posts.sort((a, b) => Date.parse(b.data.pubDate.toString()) - Date.parse(a.data.p
 		.post-subcontainer {
 			border-bottom: 1px solid #eaeaea;
 			overflow: clip;
+			margin-bottom: 15px;
 		}
 		.post {
 			width : 100%;
@@ -72,6 +72,14 @@ posts.sort((a, b) => Date.parse(b.data.pubDate.toString()) - Date.parse(a.data.p
 				font-weight: 800;
 			}
 		}
+		.tweet-footer {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			color: #666;
+			margin-top: 0.5rem;
+			font-size: 0.9rem;
+		}
 	</style>
 	<body>
 		<main>
@@ -85,16 +93,14 @@ posts.sort((a, b) => Date.parse(b.data.pubDate.toString()) - Date.parse(a.data.p
 					{
 						post.data.isLongPost ? <a href={post ? '/blog/' + post.slug : '/'}>{post.data.title}
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-right"><path d="M6 9h6V5l7 7-7 7v-4H6V9z"/></svg>
-						</a> : <Tweet slug={post.slug} />
-					}
-						<!--<a class="post" href={post ? '/blog/' + post.slug : '/'}>
-							<div class="label-container">
-								<label>{post ? post.data.title : ''}</label>
-								<Badge isLongPost={post.data.isLongPost} />
+						</a> : <div>
+									<Tweet slug={post.slug} />
+									<small class="tweet-footer">
+										<FormattedDate date={post.data.pubDate} />
+										<span>tags</span>
+									</small>
 							</div>
-							<div>{post.data.isLongPost ? "" : <Tweet slug={post.slug} />}</div>
-							<small><FormattedDate date={post.data.pubDate} /></small>
-						</a> -->
+					}
 					</li>))
 				}
 			</ul>
