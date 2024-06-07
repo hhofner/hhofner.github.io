@@ -97,7 +97,7 @@ posts.sort((a, b) => Date.parse(b.data.pubDate.toString()) - Date.parse(a.data.p
 									<Tweet slug={post.slug} />
 									<small class="tweet-footer">
 										<FormattedDate date={post.data.pubDate} />
-										<span>tags</span>
+										<span>{post.data.tags ? post.data.tags.map((tag) => "#" + tag).join(", ") : ""}</span>
 									</small>
 							</div>
 					}
